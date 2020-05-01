@@ -7,7 +7,7 @@ import "time"
 
 const (
 	IssuesURL = "https://api.github.com/search/issues"
-	IssueURL  = "https://api.github.com/repos"
+	IssueURL  = "https://api.github.com/repos/"
 )
 
 type IssuesSearchResult struct {
@@ -18,11 +18,11 @@ type IssuesSearchResult struct {
 type Issue struct {
 	Number    int
 	HTMLURL   string `json:"html_url"`
-	Title     string
+	Title     string `json:"title"`
 	State     string
 	User      *User
 	CreatedAt time.Time `json:"created_at"`
-	Body      string    // in Markdown format
+	Body      string    `json:"body"` // in Markdown format
 }
 
 type User struct {
