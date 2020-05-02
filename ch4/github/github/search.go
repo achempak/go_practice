@@ -26,7 +26,7 @@ func token(file string) string {
 }
 
 // SearchIssues queries GitHub issue tracker
-// example: https://api.github.com/search/issues?q=windows+label:bug+language:python+state:open&sort=created&order=asc
+// example. repo:golang/go is:open json decoder
 func SearchIssues(terms []string) (*IssuesSearchResult, error) {
 	q := url.QueryEscape(strings.Join(terms, " "))
 	fmt.Println("URL: " + IssuesURL + q)
